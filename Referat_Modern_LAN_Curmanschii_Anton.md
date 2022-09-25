@@ -17,7 +17,12 @@ Student: *Curmanschii Anton, MIA2022.*.
   - [Punctele de acces](#punctele-de-acces)
     - [Tabelul cu informații la hardware](#tabelul-cu-informații-la-hardware)
     - [Compararea rapidității](#compararea-rapidității)
-    - [Zyxel WAX650S](#zyxel-wax650s)
+  - [Tehnologii noi](#tehnologii-noi)
+    - [802.11az: Positioning Using Super-Resolution Time of Arrival Estimation](#80211az-positioning-using-super-resolution-time-of-arrival-estimation)
+    - [802.11bd: Următoarea generație de comunicații de la vehicul la vehicul](#80211bd-următoarea-generație-de-comunicații-de-la-vehicul-la-vehicul)
+    - [802.11bf: WLAN Sensing](#80211bf-wlan-sensing)
+    - [802.11bh: Randomized and Changing MAC Addresses (RCM)](#80211bh-randomized-and-changing-mac-addresses-rcm)
+  - [Bibliografie](#bibliografie)
 
 ## Introducere
 
@@ -204,6 +209,15 @@ Cu toate că routerele pot deservi toți clienții din apropiere, totodată des 
             <td class="">1x 1GbE</td>
             <td class="">1x 1GbE</td>
         </tr>
+        <tr>
+            <td class="leftside">Approximate price</td>
+            <td class="">670$</td>
+            <td class="">200$</td>
+            <td class="">600$</td>
+            <td class="">200$</td>
+            <td class="">?</td>
+            <td class="">200$</td>
+        </tr>
     </tbody>
 </table>
 
@@ -222,15 +236,63 @@ Nu este surprinzător faptul că punctele de acces Wi-Fi 6 ies învigător, avâ
 
 Însă faptul că un anumit punct de acces s-a demonstrat mai rapid nu înseamnă că este alegerea cea mai bună pentru o rețea concretă. Sunt mai mulți factori, precum scopurile de folosire, prețul, etc. care tot trebuie fi luate în considerarea când se alege un dispozitiv.
 
-
+<!-- 
 ### Zyxel WAX650S
 
 Zyxel WAX650S este în prezent unul dintre cele mai bune puncte de acces Wi-Fi 6 de pe piață.
 Cu toate că nu este atât de ieftin în comparație cu alte dispozitive din această listă, acesta concurează cu puncte de acces de nivel enterprise, deci performanța sa este excelentă.
 Desigur, utilizează tehnologia OFDMA, are suport pentru MU-MIMO, beamforming și lățime de bandă a canalului de 160 MHz, dar ce-i interesant suportează și PoE++ (Power over Ethernet).
 Se pare că este necesar un switch Ethernet PoE puternic (cum ar fi XS1930-12HP) pentru a-l putea utiliza la maxim.
-WAX650S vine cu un port 5GbE pentru a vă permite să depășiți vechea limitare Gigabit.
+WAX650S vine cu un port 5GbE pentru a vă permite să depășiți vechea limitare Gigabit. -->
 
+
+## Tehnologii noi
+
+Sunt mai multe tehnologii noi care încă nu sunt răspândite sau încă sunt în starea de dezvoltare.
+Aceștia vor fi incluse în standarde noi în viitor.
+
+### 802.11az: Positioning Using Super-Resolution Time of Arrival Estimation
+
+Un grup de studiu a fost format în ianuarie 2015 pentru a răspunde nevoilor unei "stații de a identifica poziția sa absolută și relativă față de o altă stație sau stații cu care este sau nu este asociată".
+Obiectivele grupului ar fi de a defini modificări la niveluri MAC și fizic care să permită "determinarea poziției absolute și relative cu o precizie mai bună în raport cu protocolul Fine Timing Measurement (FTM) care se execută pe același tip fizic, reducând în același timp utilizarea mediului wireless existent și consumul de energie, și este scalabil pentru implementări dense."
+Aprobarea finală este așteptată până în decembrie 2022.
+
+> Prin tip fizic cred că se are în vedere implementarea nivelului fizic al substandardului 802.11 în funcție.
+
+### 802.11bd: Următoarea generație de comunicații de la vehicul la vehicul
+
+Unul dintre conceptele asociate cu lumea vehiculelor inteligente este că mașinile aflate în imediata apropiere pot crea rețele ad-hoc pentru a face schimb de informații legate de siguranța și gestionarea traficului.
+802.11bd este definit ca un amendament pentru 802.11p pentru a îmbunătăți fiabilitatea, latența și debitul.
+Aprobarea finală este așteptată până în decembrie 2022.
+
+### 802.11bf: WLAN Sensing
+
+Odată cu progresele recente, WLAN sau Wi-Fi a a fost utilizată cu succes pentru a realiza funcționalități de sensing, cum ar fi detectarea, localizarea și recunoașterea.
+Cu toate acestea, rețelele WLAN sunt dezvoltate în principal pentru comunicație și, prin urmare, este posibil să nu poată satisface cerințele stricte de detecție în aplicații emergente.
+Pentru a rezolva această problemă, un nou grup operativ 802.11bf, a fost înființat de către grupul de lucru IEEE 802.11, cu obiectivul de a crea un nou amendament la standardul WLAN pentru a oferi cerințele avansate de detecție, reducând în același timp la minimum efectul asupra comunicațiilor.
+
+În conformitate cu definiția formală a IEEE 802.11bf, WLAN sensing se referă la utilizarea semnalelor fără fir primite de la stații capabile să detecteze WLAN pentru a determina caracteristicile (de exemplu, distanța, viteza, unghiul, mișcarea, prezența sau proximitatea, gestul) țintelor vizate (de exemplu, obiect, om, animal) într-un anumit mediu (de exemplu, cameră, casă, vehicule, întreprindere).
+
+### 802.11bh: Randomized and Changing MAC Addresses (RCM)
+
+Ideea este să se îmbunătățească confidențialitatea utilizatorilor în rețea.
+Se poate imagina o situație unde o persoană facând o încercare de a conecta la un LAN, răspândește informația despre prezența ei în acest LAN: dacă o persoană se conectează la Wi-Fi din același device, este ușor să asocieze adresa MAC al persoanei la singura persoană.
+Astfel, dacă adresa MAC este asociată dispozitivului, persoana poate fi urmărită, și nu doar în cadrul unui singur LAN, ci și în LAN-uri diferite. 
+
+Soluția este să se genereze adresa MAC în mod aleator.
+
+Deși acest lucru sporește confidențialitatea utilizatorului, conduce, de asemenea, la potențiale probleme de conectivitate și la o posibilă întrerupere a experienței utilizatorului.
+Un exemplu este atunci când utilizatorii doresc să utilizeze o rețea Wi-Fi publică într-o cafenea, hotel, cabinet medical sau în altă parte.
+Deoarece multe portaluri captive utilizează adrese MAC statice ca identificatori, este posibil ca utilizatorul să fie nevoit să se conecteze în mod repetat și să retrimită informații pe măsură ce adresa MAC se schimbă.
+În alte cazuri, este posibil ca utilizatorul să fie nevoit să se autentifice și să se conecteze din nou atunci când dispozitivul se oprește, se deconectează și se reconectează prin intermediul unei adrese MAC diferite.
+
+Un alt exemplu este atunci când familiile stabilesc controale parentale pe dispozitivele copiilor în ceea ce privește timpul petrecut în fața ecranului și conținutul.
+Aceste limite sunt deseori impuse de adresa MAC a unui dispozitiv, iar dacă adresa se schimbă, controalele pot împiedica accesul la conținutul permis sau nu se mai aplică.
+
+Operatorii de rețea tot pot întâmpina dificultăți, deoarece schimbarea continuă a identificatorilor dispozitivelor face dificilă înțelegerea de către operatori a legitimității unui utilizator sau a numărului de dispozitive conectate la o rețea la un moment dat, a aplicării de analize avansate ale rețelei și a depanării acesteia sau a menținerii controlului asupra rețelelor și utilizatorilor în scopuri comerciale.
+
+
+## Bibliografie
 
 - [Standardele IEEE 802.11](https://www.ieee802.org/11/Reports/802.11_Timelines.htm)
 - [IEEE 802.11ac info](https://scdn.rohde-schwarz.com/ur/pws/dl_downloads/dl_application/application_notes/1ma192/1MA192_7e_80211ac_technology.pdf)
@@ -247,3 +309,9 @@ WAX650S vine cu un port 5GbE pentru a vă permite să depășiți vechea limitar
 - [Beamforming](https://www.networkworld.com/article/3445039/beamforming-explained-how-it-makes-wireless-communication-faster.html)
 - [PoE](https://www.servethehome.com/key-differences-of-poe-vs-poe-vs-poe-switches/)
 - [5GbE](https://youtu.be/JjliZScYG7Y)
+- [802.11az Positioning Using Super-Resolution Time of Arrival Estimation](https://www.mathworks.com/help/wlan/ug/802-11az-indoor-positioning-using-super-resolution-time-of-arrival-estimation.html)
+- [Fine Timing Measurement](https://core.ac.uk/download/pdf/233003516.pdf)
+- [802.11bd](https://ieeexplore.ieee.org/document/8723326)
+- [802.11bf](https://arxiv.org/abs/2207.04859)
+- [802.11bh](https://youtu.be/3ec7KfHPOf0)
+- [802.11bh privacy and ease of use](https://beyondstandards.ieee.org/data-privacy-and-ease-of-use-in-wireless-networks/)
