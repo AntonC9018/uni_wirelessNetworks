@@ -63,8 +63,37 @@ Scrolez jos și apas *Save Settings*.
 
 Rămâne să configurăm celelălt router și serverul DNS.
 
-Am conectat routerele între sine, și am configurat 
+Am conectat routerele între sine, și am configurat adresa interfeței din partea routerului doi.
+
 ![](images/router_router_connection.png)
 
+Am conectat serverul, am adăugat adresa la a doua interfață de la al doilea router, am configurat adresa ip al serverului.
+
+![](images/interface_2_other_router.png)
+![](images/dns_server_ip_config.png)
+
+Am configurat serviciul DNS pe server, adaugând o înregistrare nouă: *www.stuff.com*, locată pe același server.
+
+![](images/dns_server_dns_config.png)
+
+> Pasul 5: verificarea conexiunei.
+
+Am dat câte un ping de la consola adminului la toate alte ip adresele, cu succes:
+- Routerul fără fir: 209.165.200.225;
+- Routerul 2: 209.165.200.226;
+- Serverul DNS: 209.165.201.1;
+- Serverul, prin DNS: www.stuff.com.
+
+Nu putem ajunge la Admin direct de pe Serverul DNS, deoarece, cred, routerul fără fir are un NAT configurat automat, datorită cui adresa locală nu este vizibilă pentru Routerul 2.
+În plus, routerul 2 nu are configurat să trimită mesaje cu IP-uri necunoscute la Routerul fără fir.
+De fapt, nici nu știe ce să facă cu ele și pur și simplu le pică.
+
+Curios este faptul că routerul fără fir nu răspunde la pinguri de la server, cu toate că request-urile ajung la el.
+Cred că pur și simplu este configurat implicit să nu răspundă la ele.
 
 [source](https://itexamanswers.net/13-1-10-packet-tracer-configure-a-wireless-network-instructions-answer.html)
+
+
+## 2. Să configureze routerul fără fir
+
+Aici configurez setările WLAN al routerului fără fir.
