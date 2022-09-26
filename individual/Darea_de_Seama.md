@@ -25,7 +25,7 @@ Topologia cu care se va petrece activitatea, routerele nu au fost conectate înt
 
 ## 1. Să se conecteze la un router fără fir
 
-> Pasul 1: conectez adminul la routerul fără fir.
+> Pasul 1: conectez Admin-ul la routerul fără fir.
 
 Folosesc cablu Eithernet straigh-through pentru a conecta Admin-ul la router.
 Conectarea devine verde, înseamnă că am avut succes.
@@ -33,7 +33,7 @@ Conectarea devine verde, înseamnă că am avut succes.
 ![Admin connection](images/admin_connection_to_router.png)
 
 
-> Pasul 2: configurez admin să folosească DHCP.
+> Pasul 2: configurez Admin-ul să folosească DHCP.
 
 Intru în **Admin -> Desktop -> IP Configuration** și bifez DHCP.
 
@@ -97,3 +97,69 @@ Cred că pur și simplu este configurat implicit să nu răspundă la ele.
 ## 2. Să configureze routerul fără fir
 
 Aici configurez setările WLAN al routerului fără fir.
+
+> Pasul 1: configurarea lui SSID.
+
+SSID înseamnă ca atare numele rețelei.
+Am selectat regimul Mixed, adică că routerul suportă standardele 802.11 b, g și n simultan.
+Nu avem regimele noi ac și ax în packet tracer.
+
+![](images/ssid_config.png)
+
+
+> Pasul 2. configurarea securității.
+
+Vom folosi protocolul WPA 2 Personal pentru securizarea accesului la rețea.
+WPA 2 Personal doar cere parola pentru a putea conecta, pe când WPA 2 Enterprise folosește un server RADIUS.
+
+![](images/ssid_config.png)
+
+
+## 3. Conectarea de clienți fără fir.
+
+Am scos modulul de rețea existent din laptop pentru a adăuga modulul WPC300N, deoarece modulul existent era pentru cablu, iar se dorește a se conecta fără fir.
+După ce am făcut acest lucru, am trecut la **Laptop0 -> Desktop -> PC Wireless -> Connect** și am dat refresh.
+
+![](images/list_of_networks.png)
+
+![](images/connection_window.png)
+
+![](images/laptop_appears_connected.png)
+
+Putem accesa adresa *www.stuff.com* în browser sau cu un ping pentru a confirma că avem conexiune.
+
+
+## 4. Adăugarea unui punct de acces
+
+Am conectat routerul la AP.
+
+![](images/router_connected_to_access_point.png)
+
+Configurez interfața punctului de acces, adaugând toate informațiile necesare despre rețea fără fir.
+
+![](images/ap_config.png)
+
+Acum mă conectez de pe Laptop2 la AP-ul (rețeaua cu semnalul mai slab), tot așa cum s-a descris anterior.
+
+![](images/laptop2_connected_to_ap.png)
+
+Verific conexiunea dând un ping la *www.stuff.com*.
+Pingul reușește.
+
+
+## 5. Actualizarea setărilor unui router
+
+Ca să schimbăm parola de acces la router, accesăm *Administration -> Management* în GUI configurării și schimbăm **Router Password** la, de exemplu, *abcd1234*.
+
+Se poate reconfigura spațiul adreselor al rețelei, de exemplu la 192.168.50.xxx de la 192.168.0.xxx.
+Pentru aste se poate accesa meniul menționat anterior cu setările DHCP și schimbat așa cum se dorește.
+Însă, adresele clienților deja în folosire atunci nu vor mai lucra.
+Ele trebuie să fie ori reactualizate manual folosind comanda `ipconfig /renew`, ori așteptând până când se sfârșește timpul de folosire (lease) al adresei.
+Aceasta se întâmplă deoarece adresele nu mai sunt valide pentru spațiul de adrese specificat din nou.
+
+
+## Concluzii
+
+În această lucrare am demonstrat cum se configurează o rețea fără fir în Cisco Packet Tracer.
+Am arătat cum să configurăm routerii fără fir și cum se realizează conectarea fără fir.
+Am asociat un AP la router pentru a prelungi aria de acoperire a rețelei (nu de fapt am prelungit-o, dar ne putem imagina că stau departe).
