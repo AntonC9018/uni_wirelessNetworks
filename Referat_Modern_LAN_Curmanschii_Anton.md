@@ -67,7 +67,7 @@ Aplicațiile urmărite includ:
 Deși 802.11 este o tehnologie rezistentă, nu este neapărat eficientă.
 802.11 funcționează atât la nivelul fizic, cât și la nivelul de date, având momente neeficiente la ambele.
 
-Din punct de vedere istoric, modificările anterioare ale standardului 802.11 au definit tehnologii care au oferit viteze de transfer de date mai mari și canale mai largi, dar nu au abordat problema eficienței.
+Istoric, modificările anterioare ale standardului 802.11 au definit tehnologii care au oferit viteze de transfer de date mai mari și canale mai largi, dar nu au abordat problema eficienței.
 O analogie des folosită este că, cu toate că au fost construite mașini mai rapide și șosele mai mari, ambuteiajele nu au dispărut.
 În ciuda ratelor de date mai mari și a canalelor de 40/80/160 MHz utilizate în 802.11n/ac, sunt mai mulți factori contribuie la congestionarea traficului, din cauza cărora ambuteiajele uneori persistă.
 
