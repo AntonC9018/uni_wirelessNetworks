@@ -70,13 +70,14 @@ Am conectat routerele între sine, și am configurat adresa interfeței din part
 Am conectat serverul, am adăugat adresa la a doua interfață de la al doilea router, am configurat adresa ip al serverului.
 
 ![](images/interface_2_other_router.png)
+
 ![](images/dns_server_ip_config.png)
 
 Am configurat serviciul DNS pe server, adaugând o înregistrare nouă: *www.stuff.com*, locată pe același server.
 
 ![](images/dns_server_dns_config.png)
 
-> Pasul 5: verificarea conexiunei.
+> Pasul 5: verificarea conexiunii.
 
 Am dat câte un ping de la consola adminului la toate alte ip adresele, cu succes:
 - Routerul fără fir: 209.165.200.225;
@@ -152,7 +153,7 @@ Pingul reușește.
 Ca să schimbăm parola de acces la router, accesăm *Administration -> Management* în GUI configurării și schimbăm **Router Password** la, de exemplu, *abcd1234*.
 
 Se poate reconfigura spațiul adreselor al rețelei, de exemplu la 192.168.50.xxx de la 192.168.0.xxx.
-Pentru aste se poate accesa meniul menționat anterior cu setările DHCP și schimbat așa cum se dorește.
+Pentru asta se accesează meniul menționat anterior cu setările DHCP și ele se schimbă așa cum se dorește.
 Însă, adresele clienților deja în folosire atunci nu vor mai lucra.
 Ele trebuie să fie ori reactualizate manual folosind comanda `ipconfig /renew`, ori așteptând până când se sfârșește timpul de folosire (lease) al adresei.
 Aceasta se întâmplă deoarece adresele nu mai sunt valide pentru spațiul de adrese specificat din nou.
