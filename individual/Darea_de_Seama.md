@@ -164,3 +164,8 @@ Aceasta se întâmplă deoarece adresele nu mai sunt valide pentru spațiul de a
 În această lucrare am demonstrat cum se configurează o rețea fără fir în Cisco Packet Tracer.
 Am arătat cum să configurăm routerii fără fir și cum se realizează conectarea fără fir.
 Am asociat un AP la router pentru a prelungi aria de acoperire a rețelei (nu de fapt am prelungit-o, dar ne putem imagina că stau departe).
+
+
+## Bibliografie
+
+Tutorialul de pe care s-au luat majoritatea task-urilor și a instrucțiunilor: https://itexamanswers.net/13-1-10-packet-tracer-configure-a-wireless-network-instructions-answer.html
