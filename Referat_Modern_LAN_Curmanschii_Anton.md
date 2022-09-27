@@ -1,3 +1,8 @@
+<style>
+* {
+  line-height: 2.3 !important;
+}
+</style>
 
 # Referat
 
