@@ -22,6 +22,7 @@ Student: *Curmanschii Anton, MIA2022.*.
     - [802.11bd: Următoarea generație de comunicații de la vehicul la vehicul](#80211bd-următoarea-generație-de-comunicații-de-la-vehicul-la-vehicul)
     - [802.11bf: WLAN Sensing](#80211bf-wlan-sensing)
     - [802.11bh: Randomized and Changing MAC Addresses (RCM)](#80211bh-randomized-and-changing-mac-addresses-rcm)
+  - [Concluzii](#concluzii)
   - [Bibliografie](#bibliografie)
 
 ## Introducere
@@ -292,18 +293,26 @@ Aceste limite sunt deseori impuse de adresa MAC a unui dispozitiv, iar dacă adr
 Operatorii de rețea tot pot întâmpina dificultăți, deoarece schimbarea continuă a identificatorilor dispozitivelor face dificilă înțelegerea de către operatori a legitimității unui utilizator sau a numărului de dispozitive conectate la o rețea la un moment dat, a aplicării de analize avansate ale rețelei și a depanării acesteia sau a menținerii controlului asupra rețelelor și utilizatorilor în scopuri comerciale.
 
 
+## Concluzii
+
+În referatul acesta s-a discutat standardul 802.11ax, tehnicile și ideile noi introduse de acest standard.
+S-au prezentat superficial tehnologiile noi care urmează a fi răspândite, ori fiind în dezvoltare, ori fiind tânări.
+Tehnologiile date rezolvă probleme specifice, realizând o soluție standartă.
+Au fost prezentate și niște cele mai bune AP-uri (puncte de acces) care acum există pe piață.
+
+
 ## Bibliografie
 
 - [Standardele IEEE 802.11](https://www.ieee802.org/11/Reports/802.11_Timelines.htm)
 - [IEEE 802.11ac info](https://scdn.rohde-schwarz.com/ur/pws/dl_downloads/dl_application/application_notes/1ma192/1MA192_7e_80211ac_technology.pdf)
 - [IEEE 802.11ax info](https://www.ni.com/ro-ro/innovations/white-papers/16/introduction-to-802-11ax-high-efficiency-wireless.html)
-- [Overview](https://www.networkworld.com/article/3238664/80211x-wi-fi-standards-and-speeds-explained.html)
+- [Standarde 802.11 overview](https://www.networkworld.com/article/3238664/80211x-wi-fi-standards-and-speeds-explained.html)
 - [OFMDA](https://www.cisco.com/c/en/us/products/wireless/what-is-ofdma.html)
 - [MU-MIMO](https://www.linksys.com/what-is-mu-mimo.html)
 - [Data Offloading](https://www.wikiwand.com/en/Mobile_data_offloading)
-- [802.11ax practical](https://www.extremenetworks.com/wifi6/what-is-80211ax/)
-- [802.11ax more stuff](https://www.extremenetworks.com/extreme-networks-blog/wi-fi-6-for-sports-venues-4-things-you-should-know/)
-- [802.11ax more more stuff](https://www.actiontec.com/three-reasons-why-802-11ax-will-change-wi-fi-forever/)
+- [802.11ax informații 1](https://www.extremenetworks.com/wifi6/what-is-80211ax/)
+- [802.11ax informații 2](https://www.extremenetworks.com/extreme-networks-blog/wi-fi-6-for-sports-venues-4-things-you-should-know/)
+- [802.11ax informații 3](https://www.actiontec.com/three-reasons-why-802-11ax-will-change-wi-fi-forever/)
 - [Punctele de acces comparison](https://www.mbreviews.com/best-wireless-access-points/)
 - [Wireless mesh networks](https://www.wikiwand.com/en/Wireless_mesh_network)
 - [Beamforming](https://www.networkworld.com/article/3445039/beamforming-explained-how-it-makes-wireless-communication-faster.html)
