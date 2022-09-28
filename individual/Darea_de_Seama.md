@@ -113,7 +113,7 @@ Nu avem regimele noi ac și ax în packet tracer.
 Vom folosi protocolul WPA 2 Personal pentru securizarea accesului la rețea.
 WPA 2 Personal doar cere parola pentru a putea conecta, pe când WPA 2 Enterprise folosește un server RADIUS.
 
-![](images/ssid_config.png)
+![](images/router-security.png)
 
 
 ## 3. Conectarea de clienți fără fir.
