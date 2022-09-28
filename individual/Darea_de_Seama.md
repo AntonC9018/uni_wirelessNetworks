@@ -67,7 +67,7 @@ Am conectat routerele între sine, și am configurat adresa interfeței din part
 
 ![](images/router_router_connection.png)
 
-Am conectat serverul, am adăugat adresa la a doua interfață de la al doilea router, am configurat adresa ip al serverului.
+Am conectat serverul, am adăugat adresa la a doua interfață de la al doilea router, am configurat adresa ip a serverului.
 
 ![](images/interface_2_other_router.png)
 
