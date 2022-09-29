@@ -1,0 +1,1 @@
+"latexmk" "--shell-escape" "-xelatex" "Referat_Modern_LAN_Curmanschii_Anton.tex"
