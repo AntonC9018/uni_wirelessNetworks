@@ -45,7 +45,7 @@ Intru în **Admin -> Desktop -> IP Configuration** și bifez DHCP.
 Pentru aceasta, intru în **Admin -> Desktop -> Web Brower** și introduc adresa routerului: *192.168.0.1*.
 Routerul cere login și parola, care sunt ambele "admin" implicit.
 Introduc "admin" în ambele câmpuri, și se încarcă meniul configurării.
-
+https://youtu.be/JijrHF10EtE?t=20
 ![](images/router_configuration.png)
 
 Adresa care a primit-o Admin este *192.168.0.100*, ceea ce poate fi explicat dacă ne uităm mai jos până la Network Setup, care arată diapazonul adreselor DHCP, începând cu adresa lui Admin, prima adresă alocată pentru primul client, și conținând 49 adrese consecutive nealocate. 
@@ -83,16 +83,14 @@ Am dat câte un ping de la consola adminului la toate alte ip adresele, cu succe
 - Routerul fără fir: 209.165.200.225;
 - Routerul 2: 209.165.200.226;
 - Serverul DNS: 209.165.201.1;
-- Serverul, prin DNS: www.stuff.com.
+- Serverul, prin DNS: www.stuff.com ([video](https://youtu.be/k6OKE2QWdzE))
 
-Nu putem ajunge la Admin direct de pe Serverul DNS, deoarece, cred, routerul fără fir are un NAT configurat automat, datorită cui adresa locală nu este vizibilă pentru Routerul 2.
+Nu putem ajunge la Admin direct de pe Serverul DNS ([video](https://youtu.be/JijrHF10EtE?t=80)), deoarece, cred, routerul fără fir are un NAT configurat automat, datorită cui adresa locală nu este vizibilă pentru Routerul 2.
 În plus, routerul 2 nu are configurat să trimită mesaje cu IP-uri necunoscute la Routerul fără fir.
 De fapt, nici nu știe ce să facă cu ele și pur și simplu le pică.
 
 Curios este faptul că routerul fără fir nu răspunde la pinguri de la server, cu toate că request-urile ajung la el.
 Cred că pur și simplu este configurat implicit să nu răspundă la ele.
-
-[source](https://itexamanswers.net/13-1-10-packet-tracer-configure-a-wireless-network-instructions-answer.html)
 
 
 ## 2. Să configureze routerul fără fir
@@ -127,7 +125,8 @@ După ce am făcut acest lucru, am trecut la **Laptop0 -> Desktop -> PC Wireless
 
 ![](images/laptop_appears_connected.png)
 
-Putem accesa adresa *www.stuff.com* în browser sau cu un ping pentru a confirma că avem conexiune.
+Putem accesa adresa *www.stuff.com* în browser sau cu un ping pentru a confirma că avem conexiune. [Video cu pinguri la server și la Admin](https://youtu.be/JijrHF10EtE?t=13).
+
 
 
 ## 4. Adăugarea unui punct de acces
@@ -145,7 +144,7 @@ Acum mă conectez de pe Laptop2 la AP-ul (rețeaua cu semnalul mai slab), tot a�
 ![](images/laptop2_connected_to_ap.png)
 
 Verific conexiunea dând un ping la *www.stuff.com*.
-Pingul reușește.
+Pingul reușește. [Video](https://youtu.be/JijrHF10EtE?t=142).
 
 
 ## 5. Actualizarea setărilor unui router
