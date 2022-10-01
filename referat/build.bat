@@ -1,1 +1,1 @@
-"latexmk" "--shell-escape" "-xelatex" "Referat_Modern_LAN_Curmanschii_Anton.tex"
+latexmk -xelatex -bibtex Referat_Modern_LAN_Curmanschii_Anton.tex
