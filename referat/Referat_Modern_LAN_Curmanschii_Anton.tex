@@ -322,42 +322,95 @@ Cu toate că routerele pot deservi toți clienții din apropiere, totodată des 
 
 \begin{table}[!ht]
     \centering
-    \begin{tabular}{|l|l|l|l|l|l|}
-    \hline
-        Zyxel WAX650 & TP-Link EAP660 HD & EnGenius ECW230 & Ubiquiti U6-LR & EnGenius EAP1250 & Linksys LAPAC1750C \\
+    \begin{tabular}{|l|l|l|l|l|l|l|}
         \hline
-        CPU & quad-core 2.0GHz Qualcomm Atheros IPQ8072A & quad-core 2.0GHz Qualcomm Atheros IPQ8072A & quad-core 2.0GHz Qualcomm Atheros IPQ8072A & dual-core 1.35GHz Mediatek ARM MT7622AV & quad-core 717MHz Qualcomm IPQ4018 (ARM Cortex-A7) & single-core 700MHz Qualcomm Atheros QCA9558
-        \\
+        Name &
+        Zyxel WAX650 &
+        TP-Link EAP660 HD &
+        EnGenius ECW230 &
+        Ubiquiti U6-LR &
+        EnGenius EAP1250 &
+        Linksys LAPAC1750C \\
         \hline
-        RAM & 512MB Nanya NT5CC256M16ER-EK & 512MB ESMT (2x M15T4G16256A) & 512MB Micron MT41K256M16TW & 512MB (2X Winbond W632GU8NB-11) & 128MB NANYA NT5CC128M16JR-EK & 128MB (2X ETRONTECH EM68B16CWQH-25H)
-        \\
+        CPU &
+        quad-core 2.0GH Qualcomm Atheros IPQ8072A &
+        quad-core 2.0GHz Qualcomm Atheros IPQ8072A &
+        quad-core 2.0GHz Qualcomm Atheros IPQ8072A &
+        dual-core 1.35GHz Mediatek ARM MT7622AV  &
+        quad-core 717MHz Qualcomm IPQ4018 (ARM Cortex-A7) &
+        single-core 700MHz Qualcomm Atheros QCA9558 \\
         \hline
-        Storage & 512MB Winbond W29N02GZSIBA) & 128MB ESMT F59D1G81MB-AZM1P0H9N & 256MB MXIC MX30LF2G18AC-XKI & 64MB (Winbond) + 16MB \&amp; 512KB (MXIC) & 32MB & 16MB Macronix MXIC MX25L12835FMI-10G
-        \\
+        RAM &
+        512MB Nanya NT5CC256M16ER-EK &
+        512MB ESMT (2x M15T4G16256A) &
+        512MB Micron MT41K256M16TW &
+        512MB (2X Winbond W632GU8NB-11) &
+        128MB Nanya NT5CC128M16JR-EK &
+        128MB (2X ETRONTECH EM68B16CWQH-25H) \\
         \hline
-        Switch & Atheros AR8033-AL1A & Qualcomm QCA8081 & Qualcomm QCA8081 & Marvell AQrate AQR112G & Qualcomm Atheros QCA8072 & Qualcomm Atheros AR8035-A + Qualcomm Atheros QCA9558
-        \\
+        Storage &
+        512MB Winbond W29N02GZSIBA &
+        128MB ESMT F59D1G81MB-AZM1P0H9N &
+        256MB MXIC MX30LF2G18AC-XKI &
+        64MB (Winbond) + 16MB \&amp; 512KB (MXIC) &
+        32MB &
+        16MB Macronix MXIC MX25L12835FMI-10G \\
         \hline
-        5GHz Radio & IPQ8072A (QCN5054) 802.11a/n/ac/ax 4 \times 4:4 & IPQ8072A (QCN5054) 802.11a/n/ac/ax 4 \times 4:4 & IPQ8072A (QCN5054) 802.11a/n/ac/ax 4 \times 4:4 & Mediatek MT7975AN \&amp; MT7915AN 802.11a/b/g/n/ac/ax 4 \times 4:4 & Qualcomm Atheros IPQ4018 802.11a/n/ac 2 \times 2:2 & Qualcomm Atheros QCA9880 802.11a/n/ac 3 \times 3
-        \\
+        Switch &
+        Atheros AR8033-AL1A &
+        Qualcomm QCA8081 &
+        Qualcomm QCA8081 &
+        Marvell AQrate AQR112G &
+        Qualcomm Atheros QCA8072 & 
+        Qualcomm Atheros AR8035-A + Qualcomm Atheros QCA9558 \\
         \hline
-        2.4GHz Radio & Qualcomm IPQ8072A (QCN5024) 802.11b/g/n/ax 4 \times 4:4 & Qualcomm IPQ8072A (QCN5024) 802.11b/g/n/ax 4 \times 4:4 & IPQ8072A (QCN5074) 802.11b/g/n/ax 4 \times 4:4 & Mediatek MT7622 802.11a/b/g/n 4 \times 4:4 & Qualcomm Atheros IPQ4018 802.11b/g/n 2 \times 2:2 & Qualcomm Atheros QCA9558 802.11b/g/n 3 \times 3
-        \\
+        5GHz Radio & 
+        IPQ8072A (QCN5054) 802.11a/n/ac/ax 4 $ \times $ 4:4 &
+        IPQ8072A (QCN5054) 802.11a/n/ac/ax 4 $ \times $ 4:4 &
+        IPQ8072A (QCN5054) 802.11a/n/ac/ax 4 $ \times $ 4:4 &
+        Mediatek MT7975AN \&amp; MT7915AN 802.11a/b/g/n/ac/ax 4 $ \times $ 4:4 &
+        Qualcomm Atheros IPQ4018 802.11a/n/ac 2 $ \times $ 2:2 &
+        Qualcomm Atheros QCA9880 802.11a/n/ac 3 $ \times $ 3 \\
         \hline
-        PoE Support & 802.3at (48V) & 802.3at (21.5W) & 802.3bt (31W) & 802.3af/at (48V) & 802.3af (12V) & 802.3af/at (12V)
-        \\
+        2.4GHz Radio &
+        Qualcomm IPQ8072A (QCN5024) 802.11b/g/n/ax 4 $ \times $ 4:4 &
+        Qualcomm IPQ8072A (QCN5024) 802.11b/g/n/ax 4 $ \times $ 4:4 &
+        IPQ8072A (QCN5074) 802.11b/g/n/ax 4 $ \times $ 4:4 &
+        Mediatek MT7622 802.11a/b/g/n 4 $ \times $ 4:4 &
+        Qualcomm Atheros IPQ4018 802.11b/g/n 2 $ \times $ 2:2 &
+        Qualcomm Atheros QCA9558 802.11b/g/n 3 $ \times $ 3 \\
         \hline
-        LAN Ports & 1x 5GbE + 1x 1GbE & 1x 2.5GbE & 1x 2.5GbE & 1x 1GbE & 1x 1GbE & 1x 1GbE
-        \\
+        PoE Support &
+        802.3at (48V) &
+        802.3at (21.5W) &
+        802.3bt (31W) &
+        802.3af/at (48V) &
+        802.3af (12V) &
+        802.3af/at (12V) \\
         \hline
-        Approximate price & 670\$ & 200\$ & 600\$ & 200\$ & ? & 200\$
-        \\
+        LAN Ports &
+        1x 5GbE + 1x 1GbE &
+        1x 2.5GbE &
+        1x 2.5GbE &
+        1x 1GbE &
+        1x 1GbE &
+        1x 1GbE \\
+        \hline
+        Approximate price &
+        670\$ &
+        200\$ &
+        600\$ &
+        200\$ &
+        {?} &
+        200\$ \\
         \hline
     \end{tabular}
 \end{table}
 
 
 \section{Compararea rapidității}
+
+\cite{standards_ieee802_11_timeline}
 
 Zyxel WAX650S deține primul loc, deoarece suportă o lățime de bandă de 160MHz și oferă un debit excelent, dar TP-Link EAP660 HD îi poate lua locul în orice moment, depășind WAX650S pe banda 80MHz, și este absolut excepțional în ceea ce privește prețul (în momentul redactării).
 Nu este surprinzător faptul că punctele de acces Wi-Fi 6 ies învigător, având în vedere faptul că acestea realizează tehcile utile menționate anterior. \footnote{Toate dispozitivele au fost testate în aceleași condiții.}

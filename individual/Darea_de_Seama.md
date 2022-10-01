@@ -1,5 +1,5 @@
 
-# Lucrul individual la RFF
+# Lucrarea individual la RFF
 
 Tema: *Configurarea și testarea unei rețele fără fir în packet tracer.*
 
