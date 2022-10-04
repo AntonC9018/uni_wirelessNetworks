@@ -145,7 +145,7 @@
 
 % Description
 \newcommand{\authorName}{CURMANSCHII Anton}
-\newcommand{\referatTitle}{Soluții moderne de rețele fără fir (tehnologii, puncte de acces și rutere 802.11)}
+\newcommand{\referatTitle}{Soluții moderne de rețele fără fir \\(tehnologii și puncte de acces 802.11)}
 \newcommand{\uniGroupName}{MIA2201}
 \newcommand{\cursul}{Rețele fără fir}
 
@@ -222,7 +222,8 @@
   \acro{IEEE}{Institute of Electrical and Electronics Engineers}
   \acro{Wi-Fi}{Wireless Fidelity}
   \acro{MU-MIMO}{Multi-User Multiple-Input and Multiple-Output}
-  \acro{OFMDA}{Orthogonal Frequency Division Multiple Access}
+  \acro{OFDMA}{Orthogonal Frequency Division Multiple Access}
+  \acro{OFDM}{Orthogonal Frequency Division Multiplexing}
   \acro{RF}{Frecvența radio}
   \acro{CSMA/CA}{Carrier-sense multiple access with collision avoidance}
   \acro{TCP}{Transmission Control Protocol}
@@ -238,36 +239,36 @@
 
 \markpage{usefulStuffBegin}
 
-Cele mai raspândite tehnologii IEEE 802.11 folosite astăzi sunt:
-- 802.11n (Wi-Fi 4, creat în 2008);
-- 802.11ac (Wi-Fi 5, creat în 2014); 
-- standardul nou 802.11ax (Wi-Fi 6 și Wi-Fi 6E, 2019 și 2020 respectiv).\footnote{Tehnologia 802.11be (Wi-Fi 7) în timpul scrierii este încă în dezvoltare.}
+Cele mai raspândite tehnologii \ac{IEEE} 802.11 folosite astăzi sunt \cite{standards_ieee802_11_overview}:
+\begin{itemize}
+\item 802.11n (\ac{Wi-Fi} 4, creat în 2008);
+\item 802.11ac (\ac{Wi-Fi} 5, creat în 2014); 
+\item standardul nou 802.11ax (\ac{Wi-Fi} 6 și \ac{Wi-Fi} 6E, 2019 și 2020 respectiv).\footnote{Tehnologia 802.11be (\ac{Wi-Fi} 7) în timpul scrierii este încă în dezvoltare.}
+\end{itemize}
 
-În acest referat va fi discutată tehnologia cea mai nouă, standardul **802.11ax**.
-
-802.11ax, denumit și High-Efficiency Wireless (HEW), are obiectivul ambițios de a îmbunătăți debitul mediu per utilizator cu cel puțin 4 ori în medii dense, unde rețeaua este folosită de un număr mare de utilizatori simultan.
+În acest referat va fi discutată tehnologia cea mai nouă, standardul \textbf{802.11ax}.
+802.11ax, denumit și \ac{HEW}, are obiectivul ambițios de a îmbunătăți debitul mediu per utilizator cu cel puțin 4 ori în medii dense, unde rețeaua este folosită de un număr mare de utilizatori simultan.
 Acest nou standard se concentrează pe implementarea unor mecanisme care să ofere unui număr mai mare de utilizatori un flux de date (debit mediu) consistent și fiabil în prezența multor alți utilizatori.
-Pentru a atinge scopul său de a deveni un RFF de eficiența ridicată, au fost elaborate mecanisme noi, discutate în continuare.
-
-Se vor discuta și dispozitivele noi care realizează acest standard.
-
+Pentru a atinge scopul său de a deveni un \ac{RF} de eficiență ridicată, au fost elaborate mecanisme noi, discutate în continuare.
+Se vor menționa și punctele de acces cele mai bune care realizează acest standard.
 
 \chapter{Capacitățile-cheie lui IEE 802.11ax}
 
-802.11ax include următoarele caracteristici cheie:
-
-- Backward-compatibility cu standardele trecute 802.11a, b, g, n, ac.
-- Mărește de 4 ori debitul mediu în scenarii de mare densitate, cum ar fi gările, aeroporturile și stadioanele.
-- Rate de date și lățimi de canal similare cu 802.11ac, introducând și noi seturi de modulație și codificare.
-- Specificat pentru funcționarea multi-utilizator prin intermediul tehnologiei MU-MIMO și OFDMA (Orthogonal Frequency Division Multiple Access).
-- Îmbunătățirea fluxului de trafic și a accesului la canal.
-- O mai bună gestionare a energiei pentru o durată de viață mai lungă a bateriei.
-
+802.11ax include următoarele caracteristici cheie \cite{ieee802_11_ax_white_paper} \cite{info_802_11ax__features}:
+\begin{itemize}
+\item Backward-compatibility cu standardele trecute 802.11a, b, g, n, ac.
+\item Mărește de 4 ori debitul mediu în scenarii de mare densitate, cum ar fi gările, aeroporturile și stadioanele.
+\item Rate de date și lățimi de canal similare cu 802.11ac, introducând și noi seturi de modulație și codificare.
+\item Specificat pentru funcționarea multi-utilizator prin intermediul tehnologiei \ac{MU-MIMO} și \ac{OFDMA}.
+\item Îmbunătățirea fluxului de trafic și a accesului la canal.
+\item O mai bună gestionare a energiei pentru o durată de viață mai lungă a bateriei.
+\end{itemize}
 
 Aplicațiile urmărite includ:
-
-- Offloading de date celulare.
-- Medii cu un număr sporit de device-uri heterogene.
+\begin{itemize}
+\item Offloading de date celulare.
+\item Medii cu un număr sporit de device-uri heterogene.
+\end{itemize}
 
 
 \section{Problema de congestie}
@@ -277,20 +278,20 @@ Deși 802.11 este o tehnologie rezistentă, nu este neapărat eficientă.
 
 Istoric, modificările anterioare ale standardului 802.11 au definit tehnologii care au oferit viteze de transfer de date mai mari și canale mai largi, dar nu au abordat problema eficienței.
 O analogie des folosită este că, cu toate că au fost construite mașini mai rapide și șosele mai mari, ambuteiajele nu au dispărut.
-În ciuda ratelor de date mai mari și a canalelor de 40/80/160 MHz utilizate în 802.11n/ac, sunt mai mulți factori contribuie la congestionarea traficului, din cauza cărora ambuteiajele uneori persistă.
+În ciuda ratelor de date mai mari și a canalelor de 40/80/160 MHz utilizate în 802.11n/ac \cite{ieee802_11_ac_white_paper}, sunt mai mulți factori contribuie la congestionarea traficului, din cauza cărora ambuteiajele uneori persistă.
 
-Ratele de date 802.11 nu reprezintă debitul TCP.
-Să se aducă aminte că frecvența radio (RF) este un mediu half-duplex și că protocolul de contenție a mediului 802.11 CSMA/CA consumă o mare parte din lățimea de bandă disponibilă.
-În condiții ideale, se poate obține un debit TCP de 60-70\% din debitul de date operațional folosind comunicarea 802.11n/ac între un punct de acces (AP) și un client.
+Ratele de date 802.11 nu reprezintă debitul \ac{TCP}.
+Să se aducă aminte că frecvența radio (\ac{RF}) este un mediu half-duplex și că protocolul de contenție a mediului 802.11 \ac{CSMA/CA} consumă o mare parte din lățimea de bandă disponibilă.
+În condiții ideale, se poate obține un debit \ac{TCP} de 60-70\% din debitul de date operațional folosind comunicarea 802.11n/ac între un punct de acces (\ac{AP}) și un client.
 Cifrele privind debitul agregat sunt considerabil mai mici în mediile practice, cu participarea activă a mai multor clienți conectați simultan la rețea, care comunică prin intermediul unui punct de acces.
 Cu un număr mai mare de clienți care încearcă a-și transmite datele cresc și cheltuielile de contenție pentru mediu, iar eficiența scade.
-Prin urmare, debitul agregat este, de obicei, cel mult 50\% din rata de date 802.11 anunțată.
+Prin urmare, debitul agregat este, de obicei, cel mult 50\% din rata de date 802.11 anunțată \cite{info_802_11ax__q_and_a}.
 
 Tehnologia 802.11ax se referă la o utilizare mai bună și mai eficientă a mediului de frecvență radio existent.
-Vitezele de transfer de date mai mari și canalele mai largi nu sunt obiectivele Wi-Fi 6.
+Vitezele de transfer de date mai mari și canalele mai largi nu sunt obiectivele \ac{Wi-Fi} 6.
 Obiectivul este o gestionare mai bună și mai eficientă a traficului 802.11.
-Cele mai multe îmbunătățiri aduse de Wi-Fi 6 se află la nivelul fizic și implică o nouă versiune multiutilizator a tehnologiei OFDM, care era destinată doar unui singur utilizator în tehnologii precedente.
-OFDMA permite unui singur radio să comunice simultan cu mai mulți clienți, ceea ce înseamnă că comunicarea devine paralelă, nu succesivă.
+Cele mai multe îmbunătățiri aduse de \ac{Wi-Fi} 6 se află la nivelul fizic și implică o nouă versiune multiutilizator a tehnologiei \ac{OFDM}, care era destinată doar unui singur utilizator în tehnologii precedente.
+\ac{OFDMA} permite unui singur radio să comunice simultan cu mai mulți clienți, ceea ce înseamnă că comunicarea devine paralelă, nu succesivă \cite{OFMDA}.
 Aceasta înseamnă, de asemenea, că dispozitivele care sunt adresate pot răspunde în același timp și la punctul de acces.
 
 \section{Beamforming}
@@ -300,141 +301,152 @@ Beamforming este o tehnică care focalizează un semnal fără fir către un anu
 Conexiunea directă rezultată este mai rapidă și mai fiabilă.
 Prin natura undelor electromagnetice, semnalele radiază în toate direcțiile de la o singură antenă, cu excepția cazului în care sunt blocate de un obiect fizic. Pentru a concentra semnalul într-o anumită direcție, formând fasciculul de energie electromagnetică, mai multe antene aflate în imediata apropiere emit același semnal aproape în același timp.
 Undele care se suprapun vor produce interferențe, care în unele zone sunt constructive (făcând semnalul mai puternic), iar în alte zone sunt distructive (făcând semnalul mai slab sau nedetectabil).
-Atunci când este executat corect, acest proces concentrează un semnal într-o anumită direcție.
+Atunci când este executat corect, acest proces concentrează un semnal într-o anumită direcție \cite{beamforming}.
 
-Beamforming în 802.11ax suportă MU-MIMO, care permite mai multor utilizatori să comunice simultan cu mai multe antene de pe router.
-MU-MIMO utilizează beamforming pentru a se asigura că comunicațiile de la router sunt direcționate eficient către fiecare client conectat.
-802.11ax a crescut, de asemenea, numărul de antene acceptate de la 4 la 8, ceea ce îmbunătățește ratele de transfer de date și extinde raza de acțiune a semnalelor către anumiți clienți.
+Beamforming în 802.11ax suportă \ac{MU-MIMO}, care permite mai multor utilizatori să comunice simultan cu mai multe antene de pe router.
+\ac{MU-MIMO} utilizează beamforming pentru a se asigura că comunicațiile de la router sunt direcționate eficient către fiecare client conectat.
+802.11ax a crescut, de asemenea, numărul de antene acceptate de la 4 la 8, ceea ce îmbunătățește ratele de transfer de date și extinde raza de acțiune a semnalelor către anumiți clienți \cite{beamforming}.
 
 
 \section{Alte beneficii}
 
-Wi-Fi 6 oferă algoritme de codificare a datelor mai bune, ceea ce duce la un debit mai mare.
-Mai multe date sunt împachetate în aceleași unde radio, deoarece chipseturile care codifică și decodifică semnalele RF sunt mai robuste și pot face față unor sarcini de lucru mai mari.
+\ac{Wi-Fi} 6 oferă algoritme de codificare a datelor mai bune, ceea ce duce la un debit mai mare.
+Mai multe date sunt împachetate în aceleași unde radio, deoarece chipseturile care codifică și decodifică semnalele \ac{RF} sunt mai robuste și pot face față unor sarcini de lucru mai mari.
 
-În plus, Wi-Fi 6 suportă atât benzile de 2.4GHz, cât și cele de 5GHz, ceea ce nu era posibil anterior.
+În plus, \ac{Wi-Fi} 6 suportă atât benzile de 2.4GHz, cât și cele de 5GHz, ceea ce nu era posibil anterior.
 În timp ce majoritatea dispozitivelor mobile trec la 5GHz, datorită vitezelor mai rapide de transfer de date, dispozitivele de 2.4GHz încă există în prezent în industrie.
 De exemplu, telefoane vechi, scanere și alte dispozitive suportează doar benzile 2.4GHz.
 Backwards compatibility deci este o chestie importantă pentru aceste tehnologii.
 
-Datorită razei de acțiune și eficienței sporite a Wi-Fi 6, conectarea la Wi-Fi va fi mai puțin solicitantă de energie pentru dispozitive.
-De asemenea, Wi-Fi 6 introduce funcția "target wake time" (TWT), care îmbunătățește durata de viață a bateriei clienților.
-TWT permite punctului de acces la rețea să comunice cu clienții și să pună conexiunea Wi-Fi în stare de repaus atunci când nu este utilizată și să se trezească automat atunci când este nevoie de Wi-Fi.
-Atunci când frecvența radio Wi-Fi petrece mai mult timp în somn, această optimizare contribuie la utilizarea scăzută a bateriei.
+Datorită razei de acțiune și eficienței sporite a \ac{Wi-Fi} 6, conectarea la \ac{Wi-Fi} va fi mai puțin solicitantă de energie pentru dispozitive.
+De asemenea, \ac{Wi-Fi} 6 introduce funcția (\ac{TWT}), care îmbunătățește durata de viață a bateriei clienților.
+\ac{TWT} permite punctului de acces la rețea să comunice cu clienții și să pună conexiunea \ac{Wi-Fi} în stare de repaus atunci când nu este utilizată și să se trezească automat atunci când este nevoie de \ac{Wi-Fi}.
+Atunci când frecvența radio \ac{Wi-Fi} petrece mai mult timp în somn, această optimizare contribuie la utilizarea scăzută a bateriei \cite{info_802_11ax__venues}.
 
 
-\chapter{Punctele de acces}
-
-\footnote{Informațiile sunt băzate pe review-ul autorului Mark B de pe site \url{mbreviews.com}, deoarece autorul referatului nu are timp, experiență sau resurse pentru a realiza o comparație hardware-ului singur.}
+\chapter{Punctele de acces} \footnote{Informațiile sunt băzate pe review-ul autorului Mark B de pe site \url{mbreviews.com}, deoarece autorul referatului nu are timp, experiență sau resurse pentru a realiza o comparație hardware-ului singur. \cite{AP_comparison}}
 
 Punctele de acces are rolul de a converti datele primite de la o conectare Ethernet cu fir într-un semnal fără fir (2.4GHz sau 5GHz), dar un router wireless poate face cam același lucru, așa că se poate întreba de ce să se aibă nevoie de un punct de acces separat?
 Cu toate că routerele pot deservi toți clienții din apropiere, totodată des există puncte moarte unde semnalul pur și simplu nu ajunge, sau zona de acoperire dorită este prea mare, de aceea posibil ar trebui să se folosească cel puțin un punct de acces suplimentar pentru a extinde rețeaua sau pentru a atinge acele colțuri.
 
-În timp ce scopul principal al unui AP este de a extinde rețeaua, unii producători au decis să adopte tehnologia de rețea mesh, ceea ce înseamnă că două sau mai multe noduri radio mici și ușoare de instalat pot forma o singură rețea fără fir care să permită roaming pe întreaga aria clădirii prin conectarea automată a clientului la nodul cel mai apropiat, astfel asigurând un semnal stabil și puternic.
+În timp ce scopul principal al unui \ac{AP} este de a extinde rețeaua, unii producători au decis să adopte tehnologia de rețea mesh, ceea ce înseamnă că două sau mai multe noduri radio mici și ușoare de instalat pot forma o singură rețea fără fir care să permită roaming pe întreaga aria clădirii prin conectarea automată a clientului la nodul cel mai apropiat, astfel asigurând un semnal stabil și puternic \cite{wireless_mesh_network_wiki}.
 
 \section{Tabelul cu informații la hardware}
 
 \begin{table}[!ht]
-    \centering
-    \begin{tabular}{|l|l|l|l|l|l|l|}
-        \hline
-        Name &
-        Zyxel WAX650 &
-        TP-Link EAP660 HD &
-        EnGenius ECW230 &
-        Ubiquiti U6-LR &
-        EnGenius EAP1250 &
-        Linksys LAPAC1750C \\
-        \hline
-        CPU &
-        quad-core 2.0GH Qualcomm Atheros IPQ8072A &
-        quad-core 2.0GHz Qualcomm Atheros IPQ8072A &
-        quad-core 2.0GHz Qualcomm Atheros IPQ8072A &
-        dual-core 1.35GHz Mediatek ARM MT7622AV  &
-        quad-core 717MHz Qualcomm IPQ4018 (ARM Cortex-A7) &
-        single-core 700MHz Qualcomm Atheros QCA9558 \\
-        \hline
-        RAM &
-        512MB Nanya NT5CC256M16ER-EK &
-        512MB ESMT (2x M15T4G16256A) &
-        512MB Micron MT41K256M16TW &
-        512MB (2X Winbond W632GU8NB-11) &
-        128MB Nanya NT5CC128M16JR-EK &
-        128MB (2X ETRONTECH EM68B16CWQH-25H) \\
-        \hline
-        Storage &
-        512MB Winbond W29N02GZSIBA &
-        128MB ESMT F59D1G81MB-AZM1P0H9N &
-        256MB MXIC MX30LF2G18AC-XKI &
-        64MB (Winbond) + 16MB \&amp; 512KB (MXIC) &
-        32MB &
-        16MB Macronix MXIC MX25L12835FMI-10G \\
-        \hline
-        Switch &
-        Atheros AR8033-AL1A &
-        Qualcomm QCA8081 &
-        Qualcomm QCA8081 &
-        Marvell AQrate AQR112G &
-        Qualcomm Atheros QCA8072 & 
-        Qualcomm Atheros AR8035-A + Qualcomm Atheros QCA9558 \\
-        \hline
-        5GHz Radio & 
-        IPQ8072A (QCN5054) 802.11a/n/ac/ax 4 $ \times $ 4:4 &
-        IPQ8072A (QCN5054) 802.11a/n/ac/ax 4 $ \times $ 4:4 &
-        IPQ8072A (QCN5054) 802.11a/n/ac/ax 4 $ \times $ 4:4 &
-        Mediatek MT7975AN \&amp; MT7915AN 802.11a/b/g/n/ac/ax 4 $ \times $ 4:4 &
-        Qualcomm Atheros IPQ4018 802.11a/n/ac 2 $ \times $ 2:2 &
-        Qualcomm Atheros QCA9880 802.11a/n/ac 3 $ \times $ 3 \\
-        \hline
-        2.4GHz Radio &
-        Qualcomm IPQ8072A (QCN5024) 802.11b/g/n/ax 4 $ \times $ 4:4 &
-        Qualcomm IPQ8072A (QCN5024) 802.11b/g/n/ax 4 $ \times $ 4:4 &
-        IPQ8072A (QCN5074) 802.11b/g/n/ax 4 $ \times $ 4:4 &
-        Mediatek MT7622 802.11a/b/g/n 4 $ \times $ 4:4 &
-        Qualcomm Atheros IPQ4018 802.11b/g/n 2 $ \times $ 2:2 &
-        Qualcomm Atheros QCA9558 802.11b/g/n 3 $ \times $ 3 \\
-        \hline
-        PoE Support &
-        802.3at (48V) &
-        802.3at (21.5W) &
-        802.3bt (31W) &
-        802.3af/at (48V) &
-        802.3af (12V) &
-        802.3af/at (12V) \\
-        \hline
-        LAN Ports &
-        1x 5GbE + 1x 1GbE &
-        1x 2.5GbE &
-        1x 2.5GbE &
-        1x 1GbE &
-        1x 1GbE &
-        1x 1GbE \\
-        \hline
-        Approximate price &
-        670\$ &
-        200\$ &
-        600\$ &
-        200\$ &
-        {?} &
-        200\$ \\
-        \hline
-    \end{tabular}
+  \centering
+  \singlespace
+  \footnotesize
+  \begin{tabular}{*{7}{|p{0.14\linewidth}}|} % 1 / 7 = 0.14
+      \hline
+      Name &
+      Zyxel WAX650 &
+      TP-Link EAP660 HD &
+      EnGenius ECW230 &
+      Ubiquiti U6-LR &
+      EnGenius EAP1250 &
+      Linksys LAPAC1750C \\
+
+      \hline
+      CPU &
+      quad-core 2.0GH Qualcomm Atheros IPQ8072A &
+      quad-core 2.0GHz Qualcomm Atheros IPQ8072A &
+      quad-core 2.0GHz Qualcomm Atheros IPQ8072A &
+      dual-core 1.35GHz Mediatek ARM MT7622AV  &
+      quad-core 717MHz Qualcomm IPQ4018 (ARM Cortex-A7) &
+      single-core 700MHz Qualcomm Atheros QCA9558 \\
+
+      \hline
+      RAM &
+      512MB Nanya NT5CC256M16ER-EK &
+      512MB ESMT (2x M15T4G16256A) &
+      512MB Micron MT41K256M16TW &
+      512MB (2X Winbond W632GU8NB-11) &
+      128MB Nanya NT5CC128M16JR-EK &
+      128MB (2X ETRONTECH EM68B16CWQH-25H) \\
+
+      \hline
+      Storage &
+      512MB Winbond W29N02GZSIBA &
+      128MB ESMT F59D1G81MB-AZM1P0H9N &
+      256MB MXIC MX30LF2G18AC-XKI &
+      64MB (Winbond) + 16MB \&amp; 512KB (MXIC) &
+      32MB &
+      16MB Macronix MXIC MX25L12835FMI-10G \\
+
+      \hline
+      Switch &
+      Atheros AR8033-AL1A &
+      Qualcomm QCA8081 &
+      Qualcomm QCA8081 &
+      Marvell AQrate AQR112G &
+      Qualcomm Atheros QCA8072 & 
+      Qualcomm Atheros AR8035-A + Qualcomm Atheros QCA9558 \\
+
+      \hline
+      5GHz Radio & 
+      IPQ8072A (QCN5054) 802.11a/n/ac/ax 4 $ \times $ 4:4 &
+      IPQ8072A (QCN5054) 802.11a/n/ac/ax 4 $ \times $ 4:4 &
+      IPQ8072A (QCN5054) 802.11a/n/ac/ax 4 $ \times $ 4:4 &
+      Mediatek MT7975AN \&amp; MT7915AN 802.11a/b/g/n/ac/ax 4 $ \times $ 4:4 &
+      Qualcomm Atheros IPQ4018 802.11a/n/ac 2 $ \times $ 2:2 &
+      Qualcomm Atheros QCA9880 802.11a/n/ac 3 $ \times $ 3 \\
+
+      \hline
+      2.4GHz Radio &
+      Qualcomm IPQ8072A (QCN5024) 802.11b/g/n/ax 4 $ \times $ 4:4 &
+      Qualcomm IPQ8072A (QCN5024) 802.11b/g/n/ax 4 $ \times $ 4:4 &
+      IPQ8072A (QCN5074) 802.11b/g/n/ax 4 $ \times $ 4:4 &
+      Mediatek MT7622 802.11a/b/g/n 4 $ \times $ 4:4 &
+      Qualcomm Atheros IPQ4018 802.11b/g/n 2 $ \times $ 2:2 &
+      Qualcomm Atheros QCA9558 802.11b/g/n 3 $ \times $ 3 \\
+
+      \hline
+      PoE Support &
+      802.3at (48V) &
+      802.3at (21.5W) &
+      802.3bt (31W) &
+      802.3af/at (48V) &
+      802.3af (12V) &
+      802.3af/at (12V) \\
+
+      \hline
+      LAN Ports &
+      1x 5GbE + 1x 1GbE &
+      1x 2.5GbE &
+      1x 2.5GbE &
+      1x 1GbE &
+      1x 1GbE &
+      1x 1GbE \\
+
+      \hline
+      Approximate price &
+      670\$ &
+      200\$ &
+      600\$ &
+      200\$ &
+      {?} &
+      200\$ \\
+
+      \hline
+  \end{tabular}
 \end{table}
+
 
 
 \section{Compararea rapidității}
 
 \cite{standards_ieee802_11_timeline}
 
-Zyxel WAX650S deține primul loc, deoarece suportă o lățime de bandă de 160MHz și oferă un debit excelent, dar TP-Link EAP660 HD îi poate lua locul în orice moment, depășind WAX650S pe banda 80MHz, și este absolut excepțional în ceea ce privește prețul (în momentul redactării).
-Nu este surprinzător faptul că punctele de acces Wi-Fi 6 ies învigător, având în vedere faptul că acestea realizează tehcile utile menționate anterior. \footnote{Toate dispozitivele au fost testate în aceleași condiții.}
+Zyxel WAX650S deține primul loc, deoarece suportă o lățime de bandă de 160MHz și oferă un debit excelent, dar TP-Link E\ac{AP}660 HD îi poate lua locul în orice moment, depășind WAX650S pe banda 80MHz, și este absolut excepțional în ceea ce privește prețul (în momentul redactării).
+Nu este surprinzător faptul că punctele de acces \ac{Wi-Fi} 6 ies învigător, având în vedere faptul că acestea realizează tehcile utile menționate anterior. \footnote{Toate dispozitivele au fost testate în aceleași condiții.}
 
 \centeredImageWithCaption{Compararea vitezelor, 5GHz}{best-wireless-access-points-1-re-new.jpg}
 
 \centeredImageWithCaption{Compararea vitezelor, 2.4GHz}{best-wireless-access-points-2-re-new.jpg}
 
 
-Însă faptul că un anumit punct de acces s-a demonstrat mai rapid nu înseamnă că este alegerea cea mai bună pentru o rețea concretă. Sunt mai mulți factori, precum scopurile de folosire, prețul, etc. care tot trebuie fi luate în considerarea când se alege un dispozitiv.
+Însă faptul că un anumit punct de acces s-a demonstrat mai rapid nu înseamnă că este alegerea cea mai bună pentru o rețea concretă. Sunt mai mulți factori, precum scopurile de folosire, prețul, etc. care tot trebuie fi luate în considerarea când se alege un dispozitiv \cite{AP_comparison}.
 
 
 \chapter{Tehnologii noi}
@@ -445,8 +457,8 @@ Aceștia vor fi incluse în standarde noi în viitor.
 \section{802.11az: Positioning Using Super-Resolution Time of Arrival Estimation}
 
 Un grup de studiu a fost format în ianuarie 2015 pentru a răspunde nevoilor unei ``stații de a identifica poziția sa absolută și relativă față de o altă stație sau stații cu care este sau nu este asociată''.
-Obiectivele grupului ar fi de a defini modificări la niveluri MAC și fizic care să permită "determinarea poziției absolute și relative cu o precizie mai bună în raport cu protocolul Fine Timing Measurement (FTM) care se execută pe același tip fizic, reducând în același timp utilizarea mediului wireless existent și consumul de energie, și este scalabil pentru implementări dense."
-Aprobarea finală este așteptată până în decembrie 2022.
+Obiectivele grupului ar fi de a defini modificări la niveluri \ac{MAC} și fizic care să permită "determinarea poziției absolute și relative cu o precizie mai bună în raport cu protocolul Fine Timing Measurement (\ac{FTM}) care se execută pe același tip fizic, reducând în același timp utilizarea mediului wireless existent și consumul de energie, și este scalabil pentru implementări dense.".
+Aprobarea finală este așteptată până în decembrie 2022 \cite{tech_802_11az}.
 
 > Prin tip fizic cred că se are în vedere implementarea nivelului fizic al substandardului 802.11 în funcție.
 
@@ -454,41 +466,43 @@ Aprobarea finală este așteptată până în decembrie 2022.
 
 Unul dintre conceptele asociate cu lumea vehiculelor inteligente este că mașinile aflate în imediata apropiere pot crea rețele ad-hoc pentru a face schimb de informații legate de siguranța și gestionarea traficului.
 802.11bd este definit ca un amendament pentru 802.11p pentru a îmbunătăți fiabilitatea, latența și debitul.
-Aprobarea finală este așteptată până în decembrie 2022.
+Aprobarea finală este așteptată până în decembrie 2022 \cite{802_11bd}.
 
-\section{802.11bf: WLAN Sensing}
+\section{802.11bf: \ac{WLAN} Sensing}
 
-Odată cu progresele recente, WLAN sau Wi-Fi a a fost utilizată cu succes pentru a realiza funcționalități de sensing, cum ar fi detectarea, localizarea și recunoașterea.
-Cu toate acestea, rețelele WLAN sunt dezvoltate în principal pentru comunicație și, prin urmare, este posibil să nu poată satisface cerințele stricte de detecție în aplicații emergente.
-Pentru a rezolva această problemă, un nou grup operativ 802.11bf, a fost înființat de către grupul de lucru IEEE 802.11, cu obiectivul de a crea un nou amendament la standardul WLAN pentru a oferi cerințele avansate de detecție, reducând în același timp la minimum efectul asupra comunicațiilor.
+Odată cu progresele recente, \ac{WLAN} sau \ac{Wi-Fi} a a fost utilizată cu succes pentru a realiza funcționalități de sensing, cum ar fi detectarea, localizarea și recunoașterea.
+Cu toate acestea, rețelele \ac{WLAN} sunt dezvoltate în principal pentru comunicație și, prin urmare, este posibil să nu poată satisface cerințele stricte de detecție în aplicații emergente.
+Pentru a rezolva această problemă, un nou grup operativ 802.11bf, a fost înființat de către grupul de lucru \ac{IEEE} 802.11, cu obiectivul de a crea un nou amendament la standardul \ac{WLAN} pentru a oferi cerințele avansate de detecție, reducând în același timp la minimum efectul asupra comunicațiilor.
 
-În conformitate cu definiția formală a IEEE 802.11bf, WLAN sensing se referă la utilizarea semnalelor fără fir primite de la stații capabile să detecteze WLAN pentru a determina caracteristicile (de exemplu, distanța, viteza, unghiul, mișcarea, prezența sau proximitatea, gestul) țintelor vizate (de exemplu, obiect, om, animal) într-un anumit mediu (de exemplu, cameră, casă, vehicule, întreprindere).
+În conformitate cu definiția formală a \ac{IEEE} 802.11bf, \ac{WLAN} sensing se referă la utilizarea semnalelor fără fir primite de la stații capabile să detecteze \ac{WLAN} pentru a determina caracteristicile (de exemplu, distanța, viteza, unghiul, mișcarea, prezența sau proximitatea, gestul) țintelor vizate (de exemplu, obiect, om, animal) într-un anumit mediu (de exemplu, cameră, casă, vehicule, întreprindere) \cite{802_11bf}.
 
-\section{802.11bh: Randomized and Changing MAC Addresses (RCM)}
+\section{802.11bh: Randomized and Changing \ac{MAC} Addresses (RCM)}
 
 Ideea este să se îmbunătățească confidențialitatea utilizatorilor în rețea.
-Se poate imagina o situație unde o persoană facând o încercare de a conecta la un LAN, răspândește informația despre prezența ei în acest LAN: dacă o persoană se conectează la Wi-Fi din același device, este ușor să asocieze adresa MAC al persoanei la singura persoană.
-Astfel, dacă adresa MAC este asociată dispozitivului, persoana poate fi urmărită, și nu doar în cadrul unui singur LAN, ci și în LAN-uri diferite. 
+Se poate imagina o situație unde o persoană facând o încercare de a conecta la un \ac{LAN}, răspândește informația despre prezența ei în acest \ac{LAN}: dacă o persoană se conectează la \ac{Wi-Fi} din același device, este ușor să asocieze adresa \ac{MAC} al persoanei la singura persoană.
+Astfel, dacă adresa \ac{MAC} este asociată dispozitivului, persoana poate fi urmărită, și nu doar în cadrul unui singur \ac{LAN}, ci și în \ac{LAN}-uri diferite \cite{802_11bh_youtube}. 
 
-Soluția este să se genereze adresa MAC în mod aleator.
+Soluția este să se genereze adresa \ac{MAC} în mod aleator.
 
 Deși acest lucru sporește confidențialitatea utilizatorului, conduce, de asemenea, la potențiale probleme de conectivitate și la o posibilă întrerupere a experienței utilizatorului.
-Un exemplu este atunci când utilizatorii doresc să utilizeze o rețea Wi-Fi publică într-o cafenea, hotel, cabinet medical sau în altă parte.
-Deoarece multe portaluri captive utilizează adrese MAC statice ca identificatori, este posibil ca utilizatorul să fie nevoit să se conecteze în mod repetat și să retrimită informații pe măsură ce adresa MAC se schimbă.
-În alte cazuri, este posibil ca utilizatorul să fie nevoit să se autentifice și să se conecteze din nou atunci când dispozitivul se oprește, se deconectează și se reconectează prin intermediul unei adrese MAC diferite.
+Un exemplu este atunci când utilizatorii doresc să utilizeze o rețea \ac{Wi-Fi} publică într-o cafenea, hotel, cabinet medical sau în altă parte.
+Deoarece multe portaluri captive utilizează adrese \ac{MAC} statice ca identificatori, este posibil ca utilizatorul să fie nevoit să se conecteze în mod repetat și să retrimită informații pe măsură ce adresa \ac{MAC} se schimbă.
+În alte cazuri, este posibil ca utilizatorul să fie nevoit să se autentifice și să se conecteze din nou atunci când dispozitivul se oprește, se deconectează și se reconectează prin intermediul unei adrese \ac{MAC} diferite.
 
 Un alt exemplu este atunci când familiile stabilesc controale parentale pe dispozitivele copiilor în ceea ce privește timpul petrecut în fața ecranului și conținutul.
-Aceste limite sunt deseori impuse de adresa MAC a unui dispozitiv, iar dacă adresa se schimbă, controalele pot împiedica accesul la conținutul permis sau nu se mai aplică.
+Aceste limite sunt deseori impuse de adresa \ac{MAC} a unui dispozitiv, iar dacă adresa se schimbă, controalele pot împiedica accesul la conținutul permis sau nu se mai aplică.
 
-Operatorii de rețea tot pot întâmpina dificultăți, deoarece schimbarea continuă a identificatorilor dispozitivelor face dificilă înțelegerea de către operatori a legitimității unui utilizator sau a numărului de dispozitive conectate la o rețea la un moment dat, a aplicării de analize avansate ale rețelei și a depanării acesteia sau a menținerii controlului asupra rețelelor și utilizatorilor în scopuri comerciale.
+Operatorii de rețea tot pot întâmpina dificultăți, deoarece schimbarea continuă a identificatorilor dispozitivelor face dificilă înțelegerea de către operatori a legitimității unui utilizator sau a numărului de dispozitive conectate la o rețea la un moment dat, a aplicării de analize avansate ale rețelei și a depanării acesteia sau a menținerii controlului asupra rețelelor și utilizatorilor în scopuri comerciale \cite{802_11bh_privacy_and_ease_of_use}.
 
 
 \chapter{Concluzii}
 
 În referatul acesta s-a discutat standardul 802.11ax, tehnicile și ideile noi introduse de acest standard.
 S-au prezentat superficial tehnologiile noi care urmează a fi răspândite, ori fiind în dezvoltare, ori fiind tânări.
-Tehnologiile date rezolvă probleme specifice, realizând o soluție standartă.
-Au fost prezentate și niște cele mai bune AP-uri (puncte de acces) care acum există pe piață.
+Tehnologiile date rezolvă probleme specifice, realizând o soluție standardă.
+Au fost prezentate și niște cele mai bune \ac{AP}-uri (puncte de acces) care acum există pe piață.
+
+Desigur, dezvolarea standardelor de rețele niciodată nu stă pe loc, și în câteva ani de zile standardele care astăzi sunt considerate tehnologii de unltimă generație vor fi depăsite \cite{standards_ieee802_11_timeline}.
 
 \newpage
 \markpage{usefulStuffEnd}
@@ -514,4 +528,4 @@ Au fost prezentate și niște cele mai bune AP-uri (puncte de acces) care acum e
 % Makes little sense, but ok I guess.
 \setcounter{chapter}{1}
 
-\unnumberedChapter{Anexe}
+\end{document}
